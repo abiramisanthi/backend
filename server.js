@@ -34,6 +34,11 @@ app.use('/api/reviews', reviewRoutes);
 app.use('/api/ai', aiRoutes);
 app.use('/api/sustainability', sustainabilityRoutes);
 
+// Root route
+app.get('/', (req, res) => {
+  res.send('Backend is running');
+});
+
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
